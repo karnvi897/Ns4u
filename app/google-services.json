@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "564139721606",
+    "firebase_url": "https://ns4u-6a69a.firebaseio.com",
+    "project_id": "ns4u-6a69a",
+    "storage_bucket": "ns4u-6a69a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564139721606:android:a46114ae455561997b2207",
+        "android_client_info": {
+          "package_name": "com.navneet.ns4u"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "564139721606-v5j7b4c3knpqu56pmfpb0silksm6t8ta.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.navneet.ns4u",
+            "certificate_hash": "e3411539d7ee2532a90ecc0b0c723a876802b084"
+          }
+        },
+        {
+          "client_id": "564139721606-rmeenbc27454cjeueq5nvj44lclnqj44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-Ah1RSo0CQw3SDPP6Id2egmY3nVs1Q3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "564139721606-rmeenbc27454cjeueq5nvj44lclnqj44.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
