@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.luseen.spacenavigation.SpaceItem;
@@ -21,14 +22,7 @@ public class Home extends AppCompatActivity {
 
 
     private SpaceNavigationView space;
-    private TextView namedash;
-    private CircleImageView profile;
-    private CardView cardempmain;
-    private LinearLayout ambulancecard;
-    private LinearLayout tipscard;
-    private LinearLayout lawcard;
-    private LinearLayout videocard;
-    private FloatingActionButton policebutton;
+
 
 
     @Override
@@ -36,46 +30,19 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.flfragment, new Dashboard());
+        ft.commit();
+
 
         space = (SpaceNavigationView) findViewById(R.id.space);
-        namedash = (TextView) findViewById(R.id.namedash);
-        profile = (CircleImageView) findViewById(R.id.profile);
-        cardempmain = (CardView) findViewById(R.id.cardempmain);
-        ambulancecard = (LinearLayout) findViewById(R.id.ambulancecard);
-        tipscard = (LinearLayout) findViewById(R.id.tipscard);
-        lawcard = (LinearLayout) findViewById(R.id.lawcard);
-        videocard = (LinearLayout) findViewById(R.id.videocard);
-        policebutton = (FloatingActionButton) findViewById(R.id.policebutton);
-
-        tipscard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),tips.class));
-            }
-        });
-
-        lawcard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),laws.class));
-            }
-        });
-
-        videocard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-
 
         space.showIconOnly();
         space.initWithSaveInstanceState(savedInstanceState);
         space.addSpaceItem(new SpaceItem("Home", R.drawable.ic_home_black_24dp));
         space.addSpaceItem(new SpaceItem("Profile", R.drawable.ic_person_black_24dp));
-        space.addSpaceItem(new SpaceItem("Share", R.drawable.ic_home_black_24dp));
-        space.addSpaceItem(new SpaceItem("Settings", R.drawable.border));
+        space.addSpaceItem(new SpaceItem("Share", R.drawable.ic_people_black_24dp));
+        space.addSpaceItem(new SpaceItem("Settings", R.drawable.ic_settings_black_24dp));
 
         space.setSpaceOnClickListener(new SpaceOnClickListener() {
             @Override
@@ -88,16 +55,56 @@ public class Home extends AppCompatActivity {
 
             @Override
             public void onItemClick(int itemIndex, String itemName) {
-                Toast.makeText(Home.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Home.this, itemName, Toast.LENGTH_SHORT).show();
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                switch (itemIndex){
+                    case 0:
+                        ft.replace(R.id.flfragment, new Dashboard());
+                        ft.commit();
+
+                        break;
+                    case 1:
+                        ft.replace(R.id.flfragment, new profile());
+                        ft.commit();
+                        break;
+                    case 2:
+                        ft.replace(R.id.flfragment, new contacts());
+                        ft.commit();
+
+                        break;
+                    case 3:
+                        ft.replace(R.id.flfragment, new Settings());
+                        ft.commit();
+                        break;
+                }
 
 
             }
 
             @Override
             public void onItemReselected(int itemIndex, String itemName) {
-                Toast.makeText(Home.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Home.this, itemName, Toast.LENGTH_SHORT).show();
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                switch (itemIndex){
+                    case 0:
+                        ft.replace(R.id.flfragment, new Dashboard());
+                        ft.commit();
 
+                        break;
+                    case 1:
+                        ft.replace(R.id.flfragment, new profile());
+                        ft.commit();
+                        break;
+                    case 2:
+                        ft.replace(R.id.flfragment, new contacts());
+                        ft.commit();
 
+                        break;
+                    case 3:
+                        ft.replace(R.id.flfragment, new Settings());
+                        ft.commit();
+                        break;
+                }
             }
         });
 

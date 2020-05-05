@@ -8,112 +8,36 @@
     android:orientation="vertical"
     tools:context=".profile">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="405dp">
+
         <LinearLayout
             android:background="@drawable/gradientbackground"
             android:layout_width="match_parent"
             android:layout_height="350dp"
+            android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="40dp"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/logo"></ImageView>
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Naari Stand for you"
-                android:textColor="#000"
-                android:textStyle="bold"
-                android:textSize="21sp"/>
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:id="@+id/editprofilepic"
+                android:src="@drawable/logo"/>
+
         </LinearLayout>
-        <androidx.cardview.widget.CardView
-            android:layout_width="400dp"
-            android:layout_height="120dp"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:weightSum="3">
-                <LinearLayout
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Saved Videos"
-                        android:textSize="20sp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:paddingTop="10dp"
-                        android:textColor="@color/starblue"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="photos"
-                        android:textSize="20sp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="125"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:paddingTop="10dp"
-                        android:textColor="@color/starblue"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Logout"
-                        android:textSize="20sp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:paddingTop="10dp"
-                        android:textColor="@color/starblue"/>
-                </LinearLayout>
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
+        android:gravity="center_horizontal"
         android:layout_marginTop="45dp">
         <LinearLayout
             android:orientation="horizontal"
@@ -123,14 +47,46 @@
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/ic_email_black_24dp"/>
-            <TextView
+                android:src="@drawable/ic_person_black_24dp"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"
+                android:layout_margin="7dp"/>
+            <EditText
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:text="nav123@gmail.com"/>
+                android:paddingLeft="40dp"
+                android:id="@+id/editname"
+                android:background="@null"
+                android:hint="Enter Name "/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_email_black_24dp"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"
+                android:layout_margin="7dp"/>
+            <EditText
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:id="@+id/editemail"
+                android:background="@null"
+                android:hint="Enter Email"/>
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="25dp"
@@ -142,13 +98,22 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/ic_phone_android_black_24dp"/>
-            <TextView
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"
+                android:layout_margin="7dp"/>
+            <EditText
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:text="89745-45670"/>
+                android:paddingLeft="40dp"
+                android:id="@+id/editphone"
+                android:background="@null"
+                android:clickable="false"
+                android:editable="false"
+                android:hint="Enter Mobile"/>
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="25dp"
@@ -160,13 +125,20 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/ic_home_black_24dp"/>
-            <TextView
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"
+                android:layout_margin="7dp"/>
+            <EditText
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:text="Gurdaspur"/>
+                android:paddingLeft="40dp"
+                android:background="@null"
+                android:id="@+id/editaddress"
+                android:hint="Enter Address"/>
         </LinearLayout>
 
 
@@ -174,9 +146,13 @@
     <Button
         android:textColor="#fff"
         android:background="@drawable/buttonstylegradient"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
+        android:id="@+id/saveprofile"
         android:layout_height="wrap_content"
-        android:text="Edit Profile"/>
+        android:text="Save Profile"/>
+
+    </LinearLayout>
+    </ScrollView>
 </LinearLayout>

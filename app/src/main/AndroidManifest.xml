@@ -20,7 +20,6 @@
         <activity android:name=".Murder"></activity>
         <activity android:name=".Rape"></activity>
         <activity android:name=".Outraging"></activity>
-        <activity android:name=".profile"></activity>
         <activity android:name=".Registration"></activity>
         <activity android:name=".Stalking"></activity>
         <activity android:name=".Threats"></activity>
