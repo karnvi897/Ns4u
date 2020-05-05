@@ -26,7 +26,7 @@ xmlns:tools="http://schemas.android.com/tools"
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Please type the verification code sent\n to your number "
+        android:text="Please type the verification code sent\n to your number\n (If not detected automatically) "
         android:textColor="#000"
         android:textSize="18dp"
         android:gravity="center"

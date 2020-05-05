@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class otp extends AppCompatActivity {
 
     private EditText otp;
-    Button button;
+    private Button button;
 
 
     @Override
@@ -19,7 +19,7 @@ public class otp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp);
         String number = getIntent().getStringExtra("number");
-     button=findViewById(R.id.submit);
+        button=findViewById(R.id.submit);
         button.setOnClickListener(new View.OnClickListener() {
 
             @   Override
