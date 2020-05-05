@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".Harassment">
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Sexual harassment (Section 354A)"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#03A9F4"
+        android:gravity="center_horizontal"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="According to (Section 354A IPC), Sexual harassment is the:"
+        android:textColor="#03A9F4"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:layout_editor_absoluteX="140dp" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="8dp"
+        android:textColor="#000"
+        android:text="1. Unwelcome touching or other physical contact."
+        app:layout_constraintTop_toBottomOf="@+id/textView45"
+        tools:layout_editor_absoluteX="158dp" />
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textColor="#000"
+        android:text="2. Asking or demanding sex or any other sexual activity."
+        app:layout_constraintTop_toBottomOf="@+id/textView46"
+        tools:layout_editor_absoluteX="142dp" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="3. Making remarks which are of a sexual nature.                             "
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@+id/textView47"
+        tools:layout_editor_absoluteX="169dp" />
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:text="There is a separate law on sexual harassment at workplaces- The Sexual Harassment of woman at workplaces (prevention, prohibition and redressal) Act and Rules 2013. There are provisions in the main criminal law(the Indian Penal Code or IPC) which are different from the special law on sexual harassment."
+        android:layout_marginTop="8dp"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@+id/textView48"
+        tools:layout_editor_absoluteX="116dp" />
+
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:textColor="#000"
+        android:layout_marginTop="10dp"
+        android:text="1. The IPC is not limited to sexual harassment at the workplace, but punishes such harassment done anywhere."
+        app:layout_constraintTop_toBottomOf="@+id/textView50"
+        tools:layout_editor_absoluteX="171dp" />
+
+    <TextView
+        android:id="@+id/textView52"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textColor="#000"
+        android:text="2. The IPC makes it possible to files a criminal complaint if you have been sexually harassed, while te special law gives you the option of seeking civil remedies and damages, involving your office administration. "
+        app:layout_constraintTop_toBottomOf="@+id/textView51"
+        tools:layout_editor_absoluteX="153dp" />
+
+    <TextView
+        android:id="@+id/textView53"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="#000"
+        android:layout_marginTop="15dp"
+        android:text="The Punishment for the first kinds of sexual harassment is three years as compared to the fourth type (making sexually coloured remarks) which is one year."
+        app:layout_constraintTop_toBottomOf="@+id/textView52"
+        tools:layout_editor_absoluteX="156dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

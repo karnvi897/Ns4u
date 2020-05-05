@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".Rape">
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="Rape (Section 375, 376,376A,376B, 276C,376D and 376E)"
+        android:textSize="23sp"
+        android:textColor="#03A9F4"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="Section 375, IPC defines rape. In simple terms, the offence of rape is the ravishment of a woman, without her consent, by force, fraud or fear. In other words, it is the carnal knowledge of any women by force against her will. It is an obnoxious act of highest degree which violates the right to privacy and sanctity of a female. Apart from being a dehumanising and perverted act, it is also an unlawful interference in the personal life of a women which is an intense blow on the honour, dignity, reputation and self-esteem of a woman. This outrageous crime not only causes physical injury to the victim but also humiliates and leaves a scar on the most precious jewel of a woman i.e. her character and dignity."
+        android:textColor="#000"
+        android:layout_marginTop="13dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:layout_editor_absoluteX="153dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="Punishment for Rape (Section 376)"
+        android:textColor="#03A9F4"
+        android:textSize="16sp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        tools:layout_editor_absoluteX="242dp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="1. Section 376 provides punishment for committing the heinous crime of rape. This section is divided into two sub-sections."
+        android:layout_marginTop="15dp"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:layout_editor_absoluteX="126dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="2. Section 376(1) provides a minimum sentence of seven years of imprisonment that may extend to life imprisonment and fine."
+        android:layout_marginTop="10dp"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        tools:layout_editor_absoluteX="182dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="3. Section 376(2) provides punishment not less than ten years of imprisonment for life or death or fine."
+        android:layout_marginTop="10dp"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        tools:layout_editor_absoluteX="167dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:layout_marginTop="6dp"
+        android:textColor="#03A9F4"
+        android:textSize="16sp"
+        android:text="Gang rape ( Section 376D)"
+        app:layout_constraintTop_toBottomOf="@+id/textView17"
+        tools:layout_editor_absoluteX="151dp" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:textColor="#000"
+        android:text="Section 376D lays down the punishment for gang rape. Where a woman is raped by more thn one person acting in furtherance of a common intention, each of them shall be liable for the offence of rape and shall be punished with rigorous imprisonment for not les than twenty years which may extend to lifetime imprisonment and fine."
+        app:layout_constraintTop_toBottomOf="@+id/textView18"
+        tools:layout_editor_absoluteX="147dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

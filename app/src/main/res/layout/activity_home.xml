@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/playout"
+        android:layout_marginBottom="30dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hi "
+            android:textSize="35sp"
+            android:layout_toRightOf="@+id/profile"
+            android:id="@+id/hi"
+            android:gravity="center"
+            android:paddingLeft="30dp"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nav"
+            android:textSize="35sp"
+            android:layout_toRightOf="@+id/hi"
+            android:id="@+id/namedash"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to Home"
+            android:textSize="25sp"
+            android:layout_toRightOf="@id/profile"
+            android:layout_below="@+id/hi"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="30sp"
+            android:src="@drawable/ic_person_black_24dp"
+            android:id="@+id/profile"
+            android:layout_marginRight="30dp"
+            android:tint="@color/colorPrimary" />
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        app:cardCornerRadius="20dp"
+        android:id="@+id/cardempmain"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_below="@+id/playout"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:gravity="center"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:id="@+id/ambulancecard"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/cardiconbackgroundred"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_add_box_black_24dp"
+                            android:padding="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Ambulance"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="#272727"
+                        android:layout_marginVertical="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:id="@+id/tipscard"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/cardiconbackgroundgreen"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_assignment_black_24dp"
+                            android:padding="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Tips of Escape Treat"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:background="#272727"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_height="1dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:gravity="center"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:layout_weight="1"
+                        android:id="@+id/lawcard"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/cardiconbackgroundblue"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_account_balance_black_24dp"
+                            android:padding="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Laws for Women"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:background="#272727"
+                        android:layout_marginVertical="10dp"
+                        android:layout_height="match_parent"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:id="@+id/videocard"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/cardiconbackgroundorange"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_play_circle_outline_black_24dp"
+                            android:padding="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Defence Videos"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_local_car_wash_black_24dp"
+                android:backgroundTint="@color/colorAccent"
+                android:id="@+id/policebutton"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_centerInParent="true"
+                app:fabSize="normal"
+                android:layout_marginBottom="20dp"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.luseen.spacenavigation.SpaceNavigationView
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        app:active_item_color="@color/colorAccent"
+        app:centre_button_color="@color/colorAccent"
+        app:inactive_item_color="#B7FFFFFF"
+        app:space_background_color="#ffffff"
+        app:active_centre_button_background_color="@color/colorAccent"
+        app:active_centre_button_icon_color="#FFFFFF"
+        app:inactive_centre_button_icon_color="#ffffff"
+        app:centre_button_icon="@drawable/ic_phone_android_black_24dp"
+        app:space_item_icon_size="@dimen/space_item_icon_default_size"
+        app:space_item_icon_only_size="@dimen/space_item_icon_only_size"
+        app:space_item_text_size="@dimen/space_item_text_default_size" />
+
+
+</RelativeLayout>

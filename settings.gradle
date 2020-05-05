@@ -1,0 +1,2 @@
+rootProject.name='Ns4u'
+include ':app'

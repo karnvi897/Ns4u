@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".Assault">
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="Assault on woman with intent to disrobe a woman (section 354B)"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:textColor="#03A9F4"
+        android:gravity="center_horizontal"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <TextView
+        android:id="@+id/textView62"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:textColor="#000"
+        android:layout_marginTop="10dp"
+        android:text="Section 354B penalises the offence of assaulting or using criminal force to a woman or abetting any such act  with an intention to disrobe oe compel her to be naked, with a punishment of ot less than three years which may extend to seven years with a fine. It is a gender specific offence i.e only a man can be punished under the section."
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:layout_editor_absoluteX="98dp" />
+
+    <TextView
+        android:id="@+id/textView63"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textColor="#03A9F4"
+        android:layout_marginTop="12dp"
+        android:text="Ingredients:"
+        app:layout_constraintTop_toBottomOf="@+id/textView62"
+        tools:layout_editor_absoluteX="135dp" />
+
+    <TextView
+        android:id="@+id/textView64"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textColor="#000"
+        android:layout_marginTop="8dp"
+        android:text="1. The accused must be man."
+        app:layout_constraintTop_toBottomOf="@+id/textView63"
+        tools:layout_editor_absoluteX="98dp" />
+
+    <TextView
+        android:id="@+id/textView65"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:textColor="#000"
+        android:layout_marginTop="6dp"
+        android:text="2. Use of criminal force or assault or abetment of any such act must be there."
+        app:layout_constraintTop_toBottomOf="@+id/textView64"
+        tools:layout_editor_absoluteX="145dp" />
+
+    <TextView
+        android:id="@+id/textView66"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginTop="6dp"
+        android:textColor="#000"
+        android:text="3. There must be an intention to disrobe a woman or compel her to be naked."
+        app:layout_constraintTop_toBottomOf="@+id/textView65"
+        tools:layout_editor_absoluteX="158dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

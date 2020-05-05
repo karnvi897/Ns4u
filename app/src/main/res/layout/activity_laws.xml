@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".laws">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="The Indian Penal Code, 1860, lays down the provisions to penalise the culprit for the heinous offences against women. Various sections under IPC specifically deals with such crimes."
+        android:textSize="17sp"
+        android:gravity="center"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Acid Attack (Section 326A and 326B)"
+        android:textColor="#03A9F4"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rape ( Sections 375, 376, 376A, 376B, 376D and 376E)"
+        android:layout_marginTop="6dp"
+        android:textColor="#03A9F4"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        tools:layout_editor_absoluteX="103dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kidnapping and abduction for different purposes (Section 363-373)"
+        android:layout_marginTop="6dp"
+        android:textColor="#03A9F4"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        tools:layout_editor_absoluteX="76dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Murder,Dowry death, Abetment of Suicide, etc. (Sections 302,304B and 306)"
+        android:layout_marginTop="6dp"
+        android:textColor="#03A9F4"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        tools:layout_editor_absoluteX="136dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cruelty by husband or his relatives (Section 498A)"
+        android:layout_marginTop="6dp"
+        android:textColor="#03A9F4"
+        app:layout_constraintTop_toBottomOf="@+id/button4"
+        tools:layout_editor_absoluteX="147dp" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Outraging the modesty of women (Section 354)"
+        android:textColor="#03A9F4"
+        android:layout_marginTop="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/button5"
+        tools:layout_editor_absoluteX="111dp" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sexual harassment (Section 354A)"
+        android:textColor="#03A9F4"
+        android:layout_marginTop="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/button6"
+        tools:layout_editor_absoluteX="125dp" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stalking (Section 354D)"
+        android:textColor="#03A9F4"
+        android:layout_marginTop="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/button7"
+        tools:layout_editor_absoluteX="138dp" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Assault on women with intent to disrobe a women (Section 354B)"
+        android:layout_marginTop="6dp"
+        android:textColor="#03a9E4"
+        app:layout_constraintTop_toBottomOf="@+id/button8"
+        tools:layout_editor_absoluteX="82dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

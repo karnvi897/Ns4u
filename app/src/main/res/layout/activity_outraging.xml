@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".Outraging">
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:text="Outraging the modesty of women (Section 354)"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:textColor="#03A9F4"
+        android:gravity="center_horizontal"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:text="Section 354, IPC deals with the offence of molestation i.e. assault to woman with intent to outrage her modesty. This section aims to protect woman against any sort of indecent or filthy behaviour by others which is derogatory to her modesty. This offence is not just against the individuals but also against the society and public morality. Therefore, if any person uses criminal fore upon a women with an intention to outrage the modesty of  women, he is deemed to be punished with an imprisonment of not less than one year which may extend upto five years with fine. "
+        android:textColor="#000"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:layout_editor_absoluteX="156dp" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:text="It is not specifically defined under IPC that what constitutes an outrage to woman's modesty. However, the court has interpreted it in various cases. According to supreme court, modesty is an attribute associated with female human being as a class. Modesty is said to be outraged by such an act of offender which shocks and recognizes as an insult to female decency and dignity."
+        android:textColor="#000"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        tools:layout_editor_absoluteX="78dp" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="For example, slapping a woman on her butt, asking her for sexual favours, disrobing her etc."
+        android:layout_marginTop="10dp"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@+id/textView32"
+        tools:layout_editor_absoluteX="190dp" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="The following are the essential of the offence under Section 354, IPC-"
+        android:textColor="#03A9F4"
+        android:layout_marginTop="9dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView35"
+        tools:layout_editor_absoluteX="244dp" />
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:textColor="#000"
+        android:text="1. The person who has been a victim of assault must be a woman."
+        app:layout_constraintTop_toBottomOf="@+id/textView36"
+        tools:layout_editor_absoluteX="156dp" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:text="2. The accused must have used criminal force on her."
+        android:layout_marginTop="8dp"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@+id/textView41"
+        tools:layout_editor_absoluteX="182dp" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:text="3 An intention to outrage the modesty of a woman must be there."
+        android:layout_marginTop="8dp"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@+id/textView43"
+        tools:layout_editor_absoluteX="184dp" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

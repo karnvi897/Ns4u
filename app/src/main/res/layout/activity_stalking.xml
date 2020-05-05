@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".Stalking">
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Stalking (Section 354D)"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#03A9F4"
+        android:gravity="center_horizontal"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <TextView
+        android:id="@+id/textView49"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:text="Section 354D, IPC talks about The term 'stalking' which generally means the act of following or trying to contact despite disinterest of woman. This section contains two offences. Firstly, where a man follows or contacts or attempts to contact a woman repeatedly despite her clear indication an secondly, where a man monitors the use by a woman of the internet, email, or any other from of electronic communication."
+        android:layout_margin="10dp"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:layout_editor_absoluteX="89dp" />
+
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:text="For the first conviction, the punishment prescribed is imprisonment for a term which may extend to three years with fine. the punishment  for second conviction may extend up to five years of imprisonment with fine."
+        android:layout_margin="10dp"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@+id/textView49"
+        tools:layout_editor_absoluteX="80dp" />
+
+    <TextView
+        android:id="@+id/textView55"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="Ingredients:"
+        android:textColor="#03A9F4"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView54"
+        tools:layout_editor_absoluteX="224dp" />
+
+    <TextView
+        android:id="@+id/textView56"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="1. The accused must be a man and victim must be a woman."
+        android:layout_marginTop="8dp"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@+id/textView55"
+        tools:layout_editor_absoluteX="134dp" />
+
+    <TextView
+        android:id="@+id/textView57"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:textColor="#000"
+        android:text="2. Follow or contact a woman or attempt to contact; or"
+        app:layout_constraintTop_toBottomOf="@+id/textView56"
+        tools:layout_editor_absoluteX="43dp" />
+
+    <TextView
+        android:id="@+id/textView58"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:textColor="#000"
+        android:layout_marginTop="5dp"
+        android:text="3. Monitors the use by the woman of the internet, email or any other electronic communication. "
+        app:layout_constraintTop_toBottomOf="@+id/textView57"
+        tools:layout_editor_absoluteX="140dp" />
+
+    <TextView
+        android:id="@+id/textView59"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="6dp"
+        android:textColor="#000"
+        android:text="4. Despite disinterest of woman."
+        app:layout_constraintTop_toBottomOf="@+id/textView58"
+        tools:layout_editor_absoluteX="204dp" />
+
+    <TextView
+        android:id="@+id/textView60"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textColor="#03A9F4"
+        android:layout_marginTop="10dp"
+        android:text="What does not amount Stalking?"
+        app:layout_constraintTop_toBottomOf="@+id/textView59"
+        tools:layout_editor_absoluteX="195dp" />
+
+    <TextView
+        android:id="@+id/textView61"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:textColor="#000"
+        android:layout_marginTop="8dp"
+        android:text="Section 354D has a proviso attached to it which carves out an expectations to this offence. If a part of responsibility is imposed on a person by the state to prevent and detect any crime and such acts must be pursued by any law and in the particular circumstances such conduct of the person must be reasonable and justified then, it will not amount to stalking."
+        app:layout_constraintTop_toBottomOf="@+id/textView60"
+        tools:layout_editor_absoluteX="138dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

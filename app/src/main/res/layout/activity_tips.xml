@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00BCD4"
+    android:orientation="vertical"
+    tools:context=".tips">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="20 Important Tips Regarding Women Safety"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Women must have emergency number with them and WhatsApp also if possible so that they can immediately tell to their family members and police."
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Hold your bag as tightly as you can when you are taking public transport. You can use it to hit your  predator."
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="When you are walking on a road, keep your mobile phone handy but avoid using it. Being on the phone makes you less alert. "
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Similarly, if you have booked a cab, always share your coordinates with someone."
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="When in office, avoid going to isolated areas with no CCTV cameras. "
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="If you have parked your car, always look underneath, especially at night or at a less-crowded area"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="When you are travelling in an auto alone, make sure you share the auto number with someone in your family even if it's during the day. "
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Whenever you are posting anything on social media, make sure you don't do it in real-time. Because if you do, you're tellig people on your social media about your whereabouts.Delay those posts by say, 20-30 minutes."
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Whenever you are giving out order for delivery at a grocery store,make sure you whisper your address or write it down somewhere and give it to the shopkeeper.Never announce it."
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Always ensure you are not posting anything on your social media with your address or phone number on it."
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Whenever you are getting your phone recharged, if it's at a store, don't loudly speak up your phone number."
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Always pour your own drinks at parties and don't ever take drinks from complete strangers or even friends. If you have left your drink unattended for even a few minutes, leave it and get a fresh drink. It may have been spiked when you were not looking. "
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="If you feel someone is stalking you, try to find a crowded place and call someone for help."
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Self defence techniques are the first and foremost thing to which each and every women must be aware of and get proper self-defence training for their safety. They must be aware of some effective defence technique such as kicks to groin, blocking punches, etc."
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Generally most of the women are gifted with sixth sense which they must use whenever they become in some problem.They should at once avoid any situation which they feel bad for them."
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="They should be careful while communicating with someone on internet in the cyberspace."
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="20dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Escape and run is also a good way to reduce some risks of women whenever they become in problem. They should never go with any unknown person alone at some unknown places."
+                        android:textSize="15sp"
+                        android:textStyle="italic"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="20dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Women must understand and feel their physical power and use accordingly. They never feel themselves weak than men and take some self defence training."
+                        android:textSize="15sp"
+                        android:textStyle="italic"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="20dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Pepper spray can also be proved as a useful self-defence too however it has  a drawback that some people cannot be harmed through it even after full-face spray. It may not stop the attacker so women should not depend on it completely and use other technique also."
+                        android:textSize="15sp"
+                        android:textStyle="italic"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="20dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Women should be very conscious while driving the car and going to any trip. They must lock all the doors of car while travelling with own or private car."
+                        android:textSize="15sp"
+                        android:textStyle="italic"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
