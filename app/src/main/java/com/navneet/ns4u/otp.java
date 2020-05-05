@@ -18,9 +18,9 @@ public class otp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp);
+        String number = getIntent().getStringExtra("number");
      button=findViewById(R.id.submit);
         button.setOnClickListener(new View.OnClickListener() {
-            private Object Intent;
 
             @   Override
             public void onClick(View v) {
