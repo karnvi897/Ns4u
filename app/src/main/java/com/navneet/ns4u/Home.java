@@ -41,7 +41,7 @@ public class Home extends AppCompatActivity {
         space.initWithSaveInstanceState(savedInstanceState);
         space.addSpaceItem(new SpaceItem("Home", R.drawable.ic_home_black_24dp));
         space.addSpaceItem(new SpaceItem("Profile", R.drawable.ic_person_black_24dp));
-        space.addSpaceItem(new SpaceItem("Share", R.drawable.ic_people_black_24dp));
+        space.addSpaceItem(new SpaceItem("Contacts", R.drawable.ic_people_black_24dp));
         space.addSpaceItem(new SpaceItem("Settings", R.drawable.ic_settings_black_24dp));
 
         space.setSpaceOnClickListener(new SpaceOnClickListener() {
