@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#85BED8"
     tools:context=".Home">
 
     <RelativeLayout
@@ -140,7 +141,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Tips of Escape Treat"
+                            android:text="Tips of Escape Threat"
                             android:layout_marginTop="10dp"
                             android:gravity="center"
                             android:textStyle="bold"/>
