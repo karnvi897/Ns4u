@@ -68,7 +68,7 @@ public class Dashboard extends Fragment {
         videocard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(getContext(),VideoActivity.class));
             }
         });
         return  view;
