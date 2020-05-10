@@ -72,10 +72,7 @@ public class Home extends AppCompatActivity {
                         ft.commit();
 
                         break;
-                    case 3:
-                        ft.replace(R.id.flfragment, new Settings());
-                        ft.commit();
-                        break;
+
                 }
 
 
@@ -100,10 +97,7 @@ public class Home extends AppCompatActivity {
                         ft.commit();
 
                         break;
-                    case 3:
-                        ft.replace(R.id.flfragment, new Settings());
-                        ft.commit();
-                        break;
+
                 }
             }
         });
