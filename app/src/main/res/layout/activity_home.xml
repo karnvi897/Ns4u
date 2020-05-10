@@ -26,7 +26,7 @@
         app:active_centre_button_background_color="@color/colorAccent"
         app:active_centre_button_icon_color="#FFFFFF"
         app:inactive_centre_button_icon_color="#ffffff"
-        app:centre_button_icon="@drawable/ic_phone_android_black_24dp"
+        app:centre_button_icon="@drawable/ic_action_name"
         app:space_item_icon_size="@dimen/space_item_icon_default_size"
         app:space_item_icon_only_size="@dimen/space_item_icon_only_size"
         app:space_item_text_size="@dimen/space_item_text_default_size" />
