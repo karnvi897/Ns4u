@@ -80,6 +80,7 @@ public class ProfileEdit extends AppCompatActivity {
 
                                 Intent homeintent = new Intent(getApplicationContext(),Home.class);
                                 startActivity(homeintent);
+                                finish();
                     }
                     else {
                         Toast.makeText(ProfileEdit.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -134,14 +135,5 @@ public class ProfileEdit extends AppCompatActivity {
                 Toast.makeText(ProfileEdit.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    @Override
-    protected void onStop() {
-
-            super.onStop();
-//            FirebaseAuth.getInstance().signOut();
-//            finish();
-
     }
 }
