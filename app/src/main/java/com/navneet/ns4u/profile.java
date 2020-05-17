@@ -3,6 +3,7 @@ package com.navneet.ns4u;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -12,8 +13,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -50,6 +56,11 @@ public class profile extends Fragment {
         address = (TextView) view.findViewById(R.id.address);
         editprofile = (Button) view.findViewById(R.id.editprofile);
 
+
+
+
+
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +78,38 @@ public class profile extends Fragment {
             }
         });
 
+
+        getdata();
         return  view;
+
     }
+
+    private void getdata() {
+        FirebaseDatabase.getInstance().getReference("person").child(FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                if (dataSnapshot.hasChildren()) {
+
+
+                    nameprofile.setText(dataSnapshot.child("name").getValue().toString());
+                    address.setText(dataSnapshot.child("address").getValue().toString());
+                    email.setText(dataSnapshot.child("email").getValue().toString());
+                    phone.setText(dataSnapshot.child("phone").getValue().toString());
+
+                    Toast.makeText(getContext(), "Welcome Back", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    Toast.makeText(getContext(), "Welcome", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(getContext(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }

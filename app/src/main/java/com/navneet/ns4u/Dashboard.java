@@ -1,6 +1,7 @@
 package com.navneet.ns4u;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -50,6 +51,25 @@ public class Dashboard extends Fragment {
         lawcard = (LinearLayout) view.findViewById(R.id.lawcard);
         videocard = (LinearLayout) view.findViewById(R.id.videocard);
         policebutton = (FloatingActionButton) view.findViewById(R.id.policebutton);
+
+        policebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:+917589375641"));
+                startActivity(intent);
+            }
+        });
+
+        ambulancecard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:+917589375641"));
+                startActivity(intent);
+            }
+        });
+
 
         tipscard.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "564139721606-nsbs8uj2bl7m5vuhvkeblfge95o49gpa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.navneet.ns4u",
+            "certificate_hash": "20c86d75131b1e2e25dd3dcb4bf5e71d7e54bc21"
+          }
+        },
+        {
+          "client_id": "564139721606-16pm729k09habvgl8le5r2lu0sq4llb0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.navneet.ns4u",
+            "certificate_hash": "e71bdd6cb43202c723cb224dfc6a4939f0c0b41c"
+          }
+        },
+        {
           "client_id": "564139721606-v5j7b4c3knpqu56pmfpb0silksm6t8ta.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
