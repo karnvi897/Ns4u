@@ -20,6 +20,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -56,7 +57,7 @@ public class profile extends Fragment {
 
 
 
-
+getImage();
 
 
         logout.setOnClickListener(new View.OnClickListener() {
@@ -113,5 +114,24 @@ public class profile extends Fragment {
             }
         });
     }
+    public void getImage() {
+        FirebaseDatabase.getInstance().getReference("person").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.hasChild(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
+                    String imageurl = dataSnapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("profileurl").getValue().toString();
+                    Picasso.get().load(imageurl).into(profilepic);
+                } else {
+                    Toast.makeText(getActivity(), "Add Profile Picture", Toast.LENGTH_SHORT).show();
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                Toast.makeText(getActivity(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
 }

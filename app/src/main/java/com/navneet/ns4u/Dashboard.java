@@ -21,6 +21,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -60,6 +61,7 @@ public class Dashboard extends Fragment {
         policebutton = (FloatingActionButton) view.findViewById(R.id.policebutton);
 
         getData();
+        getImage();
 
         policebutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,35 +85,34 @@ public class Dashboard extends Fragment {
         tipscard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(),tips.class));
+                startActivity(new Intent(getActivity(), tips.class));
             }
         });
 
         lawcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(),laws.class));
+                startActivity(new Intent(getActivity(), laws.class));
             }
         });
 
         videocard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(),VideoActivity.class));
+                startActivity(new Intent(getContext(), VideoActivity.class));
             }
         });
-        return  view;
+        return view;
     }
 
-    public void getData(){
+    public void getData() {
         FirebaseDatabase.getInstance().getReference("person").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                if (dataSnapshot.hasChildren()){
+                if (dataSnapshot.hasChildren()) {
                     namedash.setText(dataSnapshot.child("name").getValue().toString());
-                }
-                else {
+                } else {
                     Toast.makeText(getActivity(), "Enter Profile", Toast.LENGTH_SHORT).show();
                 }
 
@@ -124,6 +125,24 @@ public class Dashboard extends Fragment {
         });
     }
 
+    public void getImage() {
+        FirebaseDatabase.getInstance().getReference("person").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.hasChild(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
+                    String imageurl = dataSnapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("profileurl").getValue().toString();
+                    Picasso.get().load(imageurl).into(profile);
+                } else {
+                    Toast.makeText(getActivity(), "Add Profile Picture", Toast.LENGTH_SHORT).show();
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
+                Toast.makeText(getActivity(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
 }
