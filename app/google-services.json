@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "564139721606-dfmafsq6mqg936dqo36dn7g69d6ir6bv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.navneet.ns4u",
+            "certificate_hash": "1ccb61f4288d10a9770c7a67531497a233ee6878"
+          }
+        },
+        {
           "client_id": "564139721606-nsbs8uj2bl7m5vuhvkeblfge95o49gpa.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

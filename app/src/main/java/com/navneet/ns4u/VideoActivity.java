@@ -23,25 +23,25 @@ public class VideoActivity extends AppCompatActivity {
 
 
         rc = (RecyclerView) findViewById(R.id.rc);
-//
-//        FirebaseDatabase.getInstance().getReference("video").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                VideoAdapter  videoAdapter=new VideoAdapter();
-//                for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
-//                    VideoModel videoModel=dataSnapshot1.getValue(VideoModel.class);
-//                    videoAdapter.adddata(videoModel);
-//                }
-//                rc.setAdapter(videoAdapter);
-//                rc.setHasFixedSize(true);
-//                rc.setLayoutManager(new LinearLayoutManager(VideoActivity.this));
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//                Toast.makeText(VideoActivity.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
+
+        FirebaseDatabase.getInstance().getReference("video").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                VideoAdapter  videoAdapter=new VideoAdapter();
+                for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+                    VideoModel videoModel=dataSnapshot1.getValue(VideoModel.class);
+                    videoAdapter.add(videoModel);
+                }
+                rc.setAdapter(videoAdapter);
+                rc.setHasFixedSize(true);
+                rc.setLayoutManager(new LinearLayoutManager(VideoActivity.this));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(VideoActivity.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }
