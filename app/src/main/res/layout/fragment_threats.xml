@@ -4,16 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
     tools:context=".Threats">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:textColor="#03A9F4"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
         android:textSize="15sp"
         android:text="1. What should a woman do if she finds herself alone in the company of a strange male as she prepares to enter a lift in a High Rise apartment late at night...?"
         tools:layout_editor_absoluteX="330dp" />
@@ -127,5 +133,7 @@
         android:text="After all, being mentally alert is the greatest weapon you can ever have."
         app:layout_constraintTop_toBottomOf="@+id/textView12"
         tools:layout_editor_absoluteX="113dp" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

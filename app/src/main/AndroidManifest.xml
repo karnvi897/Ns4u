@@ -29,7 +29,6 @@
         <activity android:name=".Outraging" />
         <activity android:name=".Registration" />
         <activity android:name=".Stalking" />
-        <activity android:name=".Threats" />
         <activity android:name=".tips" />
         <activity android:name=".Assault" />
         <activity android:name=".ProfileEdit" />
