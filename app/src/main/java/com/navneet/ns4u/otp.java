@@ -120,7 +120,7 @@ public class otp extends AppCompatActivity {
 
                 if (task.isSuccessful()) {
 
-                    FirebaseDatabase.getInstance().getReference("all_number").child(FirebaseAuth.getInstance().getCurrentUser().toString())
+                    FirebaseDatabase.getInstance().getReference("all_number").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .addValueEventListener(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -129,6 +129,7 @@ public class otp extends AppCompatActivity {
                                     if(dataSnapshot.exists()){
                                         for (DataSnapshot snapshot:dataSnapshot.getChildren()){
                                             if(i==0){
+                                                i=1;
                                                 NumberModel model=snapshot.getValue(NumberModel.class);
                                                 database.setNumber(model.getNumber());
                                                 database.setName(model.getName());
