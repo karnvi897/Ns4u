@@ -59,6 +59,8 @@ public class Dashboard extends Fragment {
         videocard = (LinearLayout) view.findViewById(R.id.videocard);
         policebutton = (FloatingActionButton) view.findViewById(R.id.policebutton);
 
+        getData();
+
         policebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,4 +123,7 @@ public class Dashboard extends Fragment {
             }
         });
     }
+
+
+
 }
