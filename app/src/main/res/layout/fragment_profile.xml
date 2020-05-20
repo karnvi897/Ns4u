@@ -10,63 +10,50 @@
 
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="405dp">
+    android:layout_height="match_parent"
+    android:layout_weight="1">
     <LinearLayout
         android:background="@drawable/gradientbackground"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:id="@+id/profilepic"
+            android:scaleType="fitXY"
             android:src="@drawable/logo"/>
-        <TextView
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Naari Stand for you"
-            android:id="@+id/nameprofile"
-            android:textColor="#000"
-            android:textStyle="bold"
-            android:textSize="21sp"/>
+
     </LinearLayout>
-    <androidx.cardview.widget.CardView
-        android:layout_width="400dp"
-        android:layout_height="120dp"
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:text="Naari Stand for you"
+        android:id="@+id/nameprofile"
+        android:textColor="#fff"
+        android:layout_above="@+id/cardpro"
+        android:textStyle="bold"
+        android:textSize="25sp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/cardpro"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="30dp"
         android:layout_alignParentBottom="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:weightSum="3">
-            <LinearLayout
-                android:gravity="center"
-                android:orientation="vertical"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:id="@+id/savedvideos"
-                android:layout_height="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Saved Videos"
-                    android:textSize="20sp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:paddingTop="10dp"
-                    android:textColor="@color/starblue"/>
-            </LinearLayout>
+            android:orientation="horizontal">
             <LinearLayout
                 android:gravity="center"
                 android:orientation="vertical"
@@ -115,7 +102,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"

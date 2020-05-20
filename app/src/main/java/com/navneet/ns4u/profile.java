@@ -28,7 +28,6 @@ public class profile extends Fragment {
 
     private ImageView profilepic;
     private TextView nameprofile;
-    private LinearLayout savedvideos;
     private LinearLayout logout;
     private TextView email;
     private TextView phone;
@@ -49,7 +48,6 @@ public class profile extends Fragment {
 
         profilepic = (ImageView) view.findViewById(R.id.profilepic);
         nameprofile = (TextView) view.findViewById(R.id.nameprofile);
-        savedvideos = (LinearLayout) view.findViewById(R.id.savedvideos);
         logout = (LinearLayout) view.findViewById(R.id.logout);
         email = (TextView) view.findViewById(R.id.email);
         phone = (TextView) view.findViewById(R.id.phone);
@@ -91,8 +89,12 @@ public class profile extends Fragment {
 
                 if (dataSnapshot.hasChildren()) {
 
+                    String fname,lname,name;
 
-                    nameprofile.setText(dataSnapshot.child("name").getValue().toString());
+                    fname = dataSnapshot.child("name").getValue().toString();
+                    lname = dataSnapshot.child("lname").getValue().toString();
+                    name = fname+" "+lname;
+                    nameprofile.setText(name);
                     address.setText(dataSnapshot.child("address").getValue().toString());
                     email.setText(dataSnapshot.child("email").getValue().toString());
                     phone.setText(dataSnapshot.child("phone").getValue().toString());

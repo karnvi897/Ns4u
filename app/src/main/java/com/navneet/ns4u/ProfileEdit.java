@@ -26,6 +26,7 @@ public class ProfileEdit extends AppCompatActivity {
 
     private ImageView editprofilepic;
     private EditText editname;
+    private EditText editlname;
     private EditText editemail;
     private EditText editphone;
     private EditText editaddress;
@@ -40,6 +41,7 @@ public class ProfileEdit extends AppCompatActivity {
         setContentView(R.layout.activity_profile_edit);
         editprofilepic = (ImageView) findViewById(R.id.editprofilepic);
         editname = (EditText) findViewById(R.id.editname);
+        editlname = (EditText) findViewById(R.id.editlname);
         editemail = (EditText) findViewById(R.id.editemail);
         editphone = (EditText) findViewById(R.id.editphone);
         editaddress = (EditText) findViewById(R.id.editaddress);
@@ -53,6 +55,7 @@ public class ProfileEdit extends AppCompatActivity {
             public void onClick(View v) {
 
                 String en = editname.getText().toString();
+                String eln = editlname.getText().toString();
                 String ee = editemail.getText().toString();
                 String ep = editphone.getText().toString();
                 String ea = editaddress.getText().toString();
@@ -61,6 +64,12 @@ public class ProfileEdit extends AppCompatActivity {
         if (en.isEmpty()){
             editname.setError("Enter Name");
         }
+        else if (eln.isEmpty()){
+            editlname.setError("Enter Name");
+        }
+        else if (ee.isEmpty()){
+            editemail.setError("Enter Name");
+        }
         else if (ea.isEmpty()){
             editaddress.setError("Enter Addrress");
         }
@@ -68,6 +77,7 @@ public class ProfileEdit extends AppCompatActivity {
             HashMap<String,String> map=new HashMap<>();
 
             map.put("name", en);
+            map.put("lname",eln);
             map.put("email", ee);
             map.put("address", ea);
             map.put("phone", ep);
@@ -112,6 +122,7 @@ public class ProfileEdit extends AppCompatActivity {
                     if (s == "1") {
 
                         editname.setText(dataSnapshot.child(FirebaseAuth.getInstance().getUid()).child("name").getValue().toString());
+                        editlname.setText(dataSnapshot.child(FirebaseAuth.getInstance().getUid()).child("lname").getValue().toString());
                         editaddress.setText(dataSnapshot.child(FirebaseAuth.getInstance().getUid()).child("address").getValue().toString());
                         editemail.setText(dataSnapshot.child(FirebaseAuth.getInstance().getUid()).child("email").getValue().toString());
 
@@ -120,6 +131,7 @@ public class ProfileEdit extends AppCompatActivity {
                     }
                     else{
                         editname.setText(dataSnapshot.child(FirebaseAuth.getInstance().getUid()).child("name").getValue().toString());
+                        editlname.setText(dataSnapshot.child(FirebaseAuth.getInstance().getUid()).child("lname").getValue().toString());
                         editaddress.setText(dataSnapshot.child(FirebaseAuth.getInstance().getUid()).child("address").getValue().toString());
                         editemail.setText(dataSnapshot.child(FirebaseAuth.getInstance().getUid()).child("email").getValue().toString());
                     }

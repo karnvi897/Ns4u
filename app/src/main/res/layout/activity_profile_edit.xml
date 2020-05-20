@@ -61,8 +61,34 @@
                 android:paddingLeft="40dp"
                 android:id="@+id/editname"
                 android:background="@null"
-                android:hint="Enter Name "/>
+                android:hint="First Name "/>
         </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_person_black_24dp"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"
+                android:layout_margin="7dp"/>
+            <EditText
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:id="@+id/editlname"
+                android:background="@null"
+                android:hint="Last Name "/>
+        </LinearLayout>
+
         <LinearLayout
             android:orientation="horizontal"
             android:paddingLeft="25dp"
