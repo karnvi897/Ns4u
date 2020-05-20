@@ -22,6 +22,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.concurrent.TimeUnit;
 
@@ -116,11 +120,42 @@ public class otp extends AppCompatActivity {
 
                 if (task.isSuccessful()) {
 
-                    Intent intent = new Intent(getApplicationContext(), ProfileEdit.class);
-                    intent.putExtra("key", "1");
-                    startActivity(intent);
-                    finish();
-                    dialog.dismiss();
+                    FirebaseDatabase.getInstance().getReference("all_number").child(FirebaseAuth.getInstance().getCurrentUser().toString())
+                            .addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    int i=0;
+                                    Database database=new Database(getApplicationContext());
+                                    if(dataSnapshot.exists()){
+                                        for (DataSnapshot snapshot:dataSnapshot.getChildren()){
+                                            if(i==0){
+                                                NumberModel model=snapshot.getValue(NumberModel.class);
+                                                database.setNumber(model.getNumber());
+                                                database.setName(model.getName());
+
+                                                Intent intent = new Intent(getApplicationContext(), ProfileEdit.class);
+                                                intent.putExtra("key", "1");
+                                                startActivity(intent);
+                                                finish();
+                                                dialog.dismiss();
+                                            }
+                                        }
+                                    }else {
+                                        Intent intent = new Intent(getApplicationContext(), ProfileEdit.class);
+                                        intent.putExtra("key", "1");
+                                        startActivity(intent);
+                                        finish();
+                                        dialog.dismiss();
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                    Toast.makeText(otp.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+
 
                 } else {
                     Toast.makeText(otp.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
