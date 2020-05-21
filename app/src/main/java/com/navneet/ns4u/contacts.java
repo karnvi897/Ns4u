@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -39,6 +40,7 @@ public class contacts extends Fragment {
     private EditText addmobile;
     private Button addcontact;
     RecyclerView recyclerView;
+    private ImageView closecontact;
 
     String noti=null;
 
@@ -66,8 +68,16 @@ public class contacts extends Fragment {
         addmobile = view.findViewById(R.id.addmobile);
         addcontact = view.findViewById(R.id.addcontact);
         recyclerView=view.findViewById(R.id.rc);
+        closecontact=view.findViewById(R.id.closecontact);
 
         addcontactlayout.setVisibility(View.GONE);
+
+        closecontact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addcontactlayout.setVisibility(View.GONE);
+            }
+        });
 
         addfab.setOnClickListener(new View.OnClickListener() {
             @Override

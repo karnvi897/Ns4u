@@ -113,7 +113,10 @@ public class ProfileEdit extends AppCompatActivity {
                     editemail.setError("Enter Name");
                 } else if (ea.isEmpty()) {
                     editaddress.setError("Enter Addrress");
-                } else {
+                }else if (uri == null && buri == null){
+                    Toast.makeText(ProfileEdit.this, "Select Image", Toast.LENGTH_SHORT).show();
+                }
+                else {
                     final HashMap<String, String> map = new HashMap<>();
 
                     map.put("name", en);
