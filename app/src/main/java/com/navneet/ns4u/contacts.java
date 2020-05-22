@@ -1,5 +1,7 @@
 package com.navneet.ns4u;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -41,6 +43,7 @@ public class contacts extends Fragment {
     private Button addcontact;
     RecyclerView recyclerView;
     private ImageView closecontact;
+    private ProgressDialog dialog;
 
     String noti=null;
 
@@ -70,6 +73,8 @@ public class contacts extends Fragment {
         recyclerView=view.findViewById(R.id.rc);
         closecontact=view.findViewById(R.id.closecontact);
 
+        dialog = new ProgressDialog(getActivity());
+
         addcontactlayout.setVisibility(View.GONE);
 
         closecontact.setOnClickListener(new View.OnClickListener() {
@@ -89,6 +94,10 @@ public class contacts extends Fragment {
         addcontact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                dialog.setMessage("Adding Contact");
+                dialog.setCanceledOnTouchOutside(false);
+                dialog.show();
 
                 String name=addname.getText().toString();
                 String number=addmobile.getText().toString();
@@ -113,6 +122,7 @@ public class contacts extends Fragment {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
+                                dialog.dismiss();
                                 addcontactlayout.setVisibility(View.GONE);
                             }
                         }
@@ -121,7 +131,9 @@ public class contacts extends Fragment {
             }
         });
 
-
+        dialog.setMessage("Fetching Contacts");
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
 
         FirebaseDatabase.getInstance().getReference("all_number").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                 .addValueEventListener(new ValueEventListener() {
@@ -137,13 +149,16 @@ public class contacts extends Fragment {
                             recyclerView.setAdapter( adapter);
                             recyclerView.setHasFixedSize(true);
                             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                            dialog.dismiss();
                         }else {
                             Toast.makeText(getContext(), "Have no number, add please", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
                         }
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
                         Toast.makeText(getContext(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
                     }
                 });
     }

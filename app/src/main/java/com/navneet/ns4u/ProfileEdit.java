@@ -8,6 +8,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -50,6 +51,9 @@ public class ProfileEdit extends AppCompatActivity {
 
     private Uri uri=null;
     private Bitmap buri=null;
+    private ProgressDialog dialog;
+    private String imageurl;
+    private String imageurl1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,9 +68,29 @@ public class ProfileEdit extends AppCompatActivity {
         editaddress = (EditText) findViewById(R.id.editaddress);
         saveprofile = (Button) findViewById(R.id.saveprofile);
 
+        dialog = new ProgressDialog(this);
+
         editphone.setText(FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber());
         getImage();
 
+        FirebaseDatabase.getInstance().getReference("person").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.hasChild(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+                    imageurl1 = dataSnapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("profileurl").getValue().toString();
+                }
+                else {
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                Toast.makeText(ProfileEdit.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         editprofilepic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,10 +137,15 @@ public class ProfileEdit extends AppCompatActivity {
                     editemail.setError("Enter Name");
                 } else if (ea.isEmpty()) {
                     editaddress.setError("Enter Addrress");
-                }else if (uri == null && buri == null){
+                }else if (imageurl == ""){
                     Toast.makeText(ProfileEdit.this, "Select Image", Toast.LENGTH_SHORT).show();
                 }
                 else {
+
+                    dialog.setMessage("Please wait.");
+                    dialog.setCanceledOnTouchOutside(false);
+                    dialog.show();
+
                     final HashMap<String, String> map = new HashMap<>();
 
                     map.put("name", en);
@@ -125,51 +154,78 @@ public class ProfileEdit extends AppCompatActivity {
                     map.put("address", ea);
                     map.put("phone", ep);
 
-                    final StorageReference mountainsRef = FirebaseStorage.getInstance().getReference("person").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(FirebaseAuth.getInstance().getCurrentUser() + ".png");
-                    UploadTask uploadTask = null;
-                    if (uri != null) {
-                        uploadTask = mountainsRef.putFile(uri);
-                    } else {
-                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                        buri.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-                        byte[] data = baos.toByteArray();
-                        uploadTask = mountainsRef.putBytes(data);
-                    }
-                    Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                        @Override
-                        public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                            if (!task.isSuccessful()) {
-                                throw task.getException();
-                            }
+                    if (imageurl1 == "") {
 
-                            // Continue with the task to get the download URL
-                            return mountainsRef.getDownloadUrl();
+                        Toast.makeText(ProfileEdit.this, "hello", Toast.LENGTH_SHORT).show();
+                        final StorageReference mountainsRef = FirebaseStorage.getInstance().getReference("person").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(FirebaseAuth.getInstance().getCurrentUser() + ".png");
+                        UploadTask uploadTask = null;
+                        if (uri != null) {
+                            uploadTask = mountainsRef.putFile(uri);
+                        } else {
+                            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                            buri.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                            byte[] data = baos.toByteArray();
+                            uploadTask = mountainsRef.putBytes(data);
                         }
-                    }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Uri> task) {
-                            if (task.isSuccessful()) {
-                                Uri downloadUri = task.getResult();
-                                map.put("profileurl", downloadUri.toString());
+                        Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                            @Override
+                            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                                if (!task.isSuccessful()) {
+                                    throw task.getException();
+                                }
 
-                                FirebaseDatabase.getInstance().getReference("person").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if (task.isSuccessful()) {
+                                // Continue with the task to get the download URL
+                                return mountainsRef.getDownloadUrl();
+                            }
+                        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Uri> task) {
+                                if (task.isSuccessful()) {
+                                    Uri downloadUri = task.getResult();
+                                    map.put("profileurl", downloadUri.toString());
 
-                                            Intent homeintent = new Intent(getApplicationContext(), Home.class);
-                                            startActivity(homeintent);
-                                            finish();
-                                        } else {
-                                            Toast.makeText(ProfileEdit.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+
+                                    FirebaseDatabase.getInstance().getReference("person").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+
+                                                Intent homeintent = new Intent(getApplicationContext(), Home.class);
+                                                startActivity(homeintent);
+                                                dialog.dismiss();
+                                                finish();
+                                            } else {
+                                                Toast.makeText(ProfileEdit.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                            }
+
                                         }
 
-                                    }
-
-                                });
+                                    });
+                                }
                             }
-                        }
-                    });
+                        });
+                    }else
+                    {
+                        map.put("profileurl", imageurl1);
+
+
+                        FirebaseDatabase.getInstance().getReference("person").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+
+                                    Intent homeintent = new Intent(getApplicationContext(), Home.class);
+                                    startActivity(homeintent);
+                                    dialog.dismiss();
+                                    finish();
+                                } else {
+                                    Toast.makeText(ProfileEdit.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                }
+
+                            }
+
+                        });
+                    }
                 }
             }
         });
@@ -196,8 +252,6 @@ public class ProfileEdit extends AppCompatActivity {
                         editlname.setText(dataSnapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("lname").getValue().toString());
                         editaddress.setText(dataSnapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("address").getValue().toString());
                         editemail.setText(dataSnapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("email").getValue().toString());
-
-                        Toast.makeText(ProfileEdit.this, "Welcome Back", Toast.LENGTH_SHORT).show();
 
                     }
                     else{
@@ -297,7 +351,7 @@ public class ProfileEdit extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.hasChild(FirebaseAuth.getInstance().getCurrentUser().getUid())){
-                    String imageurl = dataSnapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("profileurl").getValue().toString();
+                    imageurl = dataSnapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("profileurl").getValue().toString();
                     Picasso.get().load(imageurl).into(editprofilepic);
                 }
                 else {

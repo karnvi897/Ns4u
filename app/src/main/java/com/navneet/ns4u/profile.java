@@ -1,5 +1,8 @@
 package com.navneet.ns4u;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -34,6 +37,7 @@ public class profile extends Fragment {
     private TextView phone;
     private TextView address;
     private Button editprofile;
+    private ProgressDialog dialog;
 
 
     public profile() {
@@ -55,9 +59,10 @@ public class profile extends Fragment {
         address = (TextView) view.findViewById(R.id.address);
         editprofile = (Button) view.findViewById(R.id.editprofile);
 
+        dialog = new ProgressDialog(getActivity());
 
 
-getImage();
+        getImage();
 
 
         logout.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +89,9 @@ getImage();
     }
 
     private void getdata() {
+        dialog.setMessage("Loading Profile");
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
         FirebaseDatabase.getInstance().getReference("person").child(FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -100,10 +108,10 @@ getImage();
                     email.setText(dataSnapshot.child("email").getValue().toString());
                     phone.setText(dataSnapshot.child("phone").getValue().toString());
 
-                    Toast.makeText(getContext(), "Welcome Back", Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
 
                 } else {
-                    Toast.makeText(getContext(), "Welcome", Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
                 }
 
             }
@@ -111,6 +119,7 @@ getImage();
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(getContext(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
             }
         });
     }

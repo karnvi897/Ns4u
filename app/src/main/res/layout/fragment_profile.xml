@@ -24,8 +24,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:id="@+id/profilepic"
-            android:scaleType="fitXY"
-            android:src="@drawable/logo"/>
+            android:scaleType="fitXY"/>
 
     </LinearLayout>
 
@@ -34,7 +33,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Naari Stand for you"
         android:id="@+id/nameprofile"
         android:textColor="#fff"
         android:layout_above="@+id/cardpro"
@@ -43,7 +41,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:id="@+id/cardpro"
         android:layout_marginBottom="10dp"
         android:layout_centerHorizontal="true"
@@ -60,19 +58,19 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/ic_share_black_24dp"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="photos"
-                    android:textSize="20sp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="125"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:paddingTop="10dp"
-                    android:textColor="@color/starblue"/>
+                    android:text="Share"
+                    android:textSize="18sp"/>
+
             </LinearLayout>
             <LinearLayout
                 android:gravity="center"
@@ -81,19 +79,19 @@
                 android:layout_weight="1"
                 android:id="@+id/logout"
                 android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/ic_power_settings_new_black_24dp"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Logout"
-                    android:textSize="20sp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:paddingTop="10dp"
-                    android:textColor="@color/starblue"/>
+                    android:textSize="18sp"/>
+
             </LinearLayout>
 
         </LinearLayout>

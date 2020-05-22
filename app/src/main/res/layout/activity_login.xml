@@ -33,15 +33,18 @@
         android:layout_centerInParent="true"
         android:layout_marginHorizontal="20dp">
 
-    <EditText
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+91"
-        android:textColor="#265452"
-        android:textSize="25sp"
-        android:editable="false"
-        android:clickable="false"/>
+        <com.hbb20.CountryCodePicker
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:ccp_showFlag="true"
+            android:layout_gravity="center_vertical"
+            android:textAlignment="center"
+            android:clickable="false"
+            app:ccp_showArrow="false"
+            android:gravity="center"
+            app:ccp_showNameCode="false"
+            app:ccp_showPhoneCode="false"/>
 
     <EditText
         android:id="@+id/editText2"
@@ -50,6 +53,8 @@
         android:paddingLeft="20dp"
         android:textColor="#265452"
         android:textSize="25sp"
+        android:hint="Enter Phone Number"
+    android:gravity="center"
         android:inputType="phone"/>
 
     </LinearLayout>
