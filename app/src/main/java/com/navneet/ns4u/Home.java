@@ -78,7 +78,7 @@ public class Home extends AppCompatActivity implements LocationListener {
         space.addSpaceItem(new SpaceItem("Home", R.drawable.ic_home_black_24dp));
         space.addSpaceItem(new SpaceItem("Profile", R.drawable.ic_person_black_24dp));
         space.addSpaceItem(new SpaceItem("Contacts", R.drawable.ic_people_black_24dp));
-        space.addSpaceItem(new SpaceItem("Settings", R.drawable.ic_settings_black_24dp));
+        space.addSpaceItem(new SpaceItem("About", R.drawable.ic_filter_tilt_shift_black_24dp));
 
         space.setSpaceOnClickListener(new SpaceOnClickListener() {
             @Override
@@ -162,6 +162,11 @@ public class Home extends AppCompatActivity implements LocationListener {
                         ft.commit();
 
                         break;
+                    case 3:
+                        ft.replace(R.id.flfragment, new About());
+                        ft.commit();
+
+                        break;
 
                 }
 
@@ -185,9 +190,13 @@ public class Home extends AppCompatActivity implements LocationListener {
                     case 2:
                         ft.replace(R.id.flfragment, new contacts());
                         ft.commit();
-
                         break;
 
+                    case 3:
+                        ft.replace(R.id.flfragment, new About());
+                        ft.commit();
+
+                        break;
                 }
             }
         });
