@@ -9,6 +9,7 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.telephony.SmsManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -43,6 +44,7 @@ public class Home extends AppCompatActivity implements LocationListener {
     String provider;
     protected String latitude, longitude;
     protected boolean gps_enabled, network_enabled;
+    private TextView locationt;
     private String link;
 
     private ArrayList permissionsToRequest;
@@ -58,6 +60,10 @@ public class Home extends AppCompatActivity implements LocationListener {
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         permissions.add(ACCESS_FINE_LOCATION);
         permissions.add(ACCESS_COARSE_LOCATION);
+
+
+        locationt =  findViewById(R.id.location);
+
 
         permissionsToRequest = findUnAskedPermissions(permissions);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -83,7 +89,6 @@ public class Home extends AppCompatActivity implements LocationListener {
         space.setSpaceOnClickListener(new SpaceOnClickListener() {
             @Override
             public void onCentreButtonClick() {
-                Toast.makeText(Home.this, "centre button", Toast.LENGTH_SHORT).show();
                 final Database database = new Database(getApplicationContext());
                 phoneno = database.getNumber();
                 if (ContextCompat.checkSelfPermission(getApplicationContext(),
@@ -97,12 +102,16 @@ public class Home extends AppCompatActivity implements LocationListener {
                                 0);
                     }
 
-                }else{
+                }else if (phoneno == "") {
+
+                    Toast.makeText(Home.this, "Add Contact first", Toast.LENGTH_SHORT).show();
+                }
+                    else{
                     SmsManager smsManager = SmsManager.getDefault();
                     smsManager.sendTextMessage("+91"+phoneno, null, "oooooaaaa......help.. "+link, null, null);
                     Toast.makeText(getApplicationContext(), "SMS sent.",
                             Toast.LENGTH_LONG).show();
-                }
+                      }
 
                 FirebaseDatabase.getInstance().getReference("all_number").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                         .addListenerForSingleValueEvent(new ValueEventListener() {
@@ -232,7 +241,8 @@ public class Home extends AppCompatActivity implements LocationListener {
 
         latitude=""+location.getLatitude();
         longitude=""+location.getLongitude();
-       link="https://www.google.com/maps/@"+latitude+","+longitude+",19.43z";
+        link="https://www.google.com/maps/@"+latitude+","+longitude+",19.43z";
+        locationt.setText(link);
     }
 
     @Override
