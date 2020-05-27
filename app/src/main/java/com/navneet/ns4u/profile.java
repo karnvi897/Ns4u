@@ -71,7 +71,7 @@ public class profile extends Fragment {
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
                 sendIntent.putExtra(Intent.EXTRA_TEXT,
-                        "Hey check out my app at: " );
+                        "Hey check out my app at: https://drive.google.com/drive/folders/1k1NWmQkeZoAocerX70TRoKXp6dO9fW6a?usp=sharing" );
                 sendIntent.setType("text/plain");
                 startActivity(sendIntent);
             }
