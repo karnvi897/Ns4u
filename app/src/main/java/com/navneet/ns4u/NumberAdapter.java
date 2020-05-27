@@ -8,6 +8,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,9 +28,17 @@ class NumberAdapter extends RecyclerView.Adapter<NumberAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NumberAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull NumberAdapter.ViewHolder holder, final int position) {
         holder.textView70.setText(list.get(position).getName());
         holder.textView71.setText(list.get(position).getNumber());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                list.remove(position);
+                notifyDataSetChanged();
+                FirebaseDatabase.getInstance().getReference("all_number").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(list.get(position).getNumber()).removeValue();
+            }
+        });
 
     }
 

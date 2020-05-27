@@ -95,9 +95,6 @@ public class contacts extends Fragment {
             @Override
             public void onClick(View v) {
 
-                dialog.setMessage("Adding Contact");
-                dialog.setCanceledOnTouchOutside(false);
-                dialog.show();
 
                 String name=addname.getText().toString();
                 String number=addmobile.getText().toString();
@@ -108,6 +105,9 @@ public class contacts extends Fragment {
                 }else {
 
                     /////////////////main code/////////////////////
+                    dialog.setMessage("Adding Contact");
+                    dialog.setCanceledOnTouchOutside(false);
+                    dialog.show();
 
                     if(noti==null){
                         Database database=new Database(getContext());
@@ -124,6 +124,8 @@ public class contacts extends Fragment {
                             if (task.isSuccessful()){
                                 dialog.dismiss();
                                 addcontactlayout.setVisibility(View.GONE);
+                                addname.setText(null);
+                                addmobile.setText(null);
                             }
                         }
                     });
