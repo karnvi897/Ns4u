@@ -51,6 +51,7 @@ public class profile extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
 
+        LinearLayout linearLayout=view.findViewById(R.id.shear);
         profilepic = (ImageView) view.findViewById(R.id.profilepic);
         nameprofile = (TextView) view.findViewById(R.id.nameprofile);
         logout = (LinearLayout) view.findViewById(R.id.logout);
@@ -64,6 +65,17 @@ public class profile extends Fragment {
 
         getImage();
 
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT,
+                        "Hey check out my app at: " );
+                sendIntent.setType("text/plain");
+                startActivity(sendIntent);
+            }
+        });
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
